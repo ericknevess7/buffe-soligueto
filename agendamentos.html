@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agende seu Evento - Buffet Soligueto</title>
+    <link rel="stylesheet" href="buffe.css">
+    <link rel="stylesheet" href="agendamento.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🍴 Buffet Soligueto</h1>
+            <nav>
+                <ul>
+                    <li><a href="buffesoligueto.html">Início</a></li>
+                    <li><a href="menu.html">Cardápio</a></li>
+                    <li><a href="agendamentos.html">Agendar</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" style="padding: 80px 20px; background: linear-gradient(135deg, rgba(139, 25, 25, 0.8), rgba(107, 21, 21, 0.8)), url('imgs/bufee2.jfif') center/cover;">
+        <div class="container">
+            <h2>Agende seu Evento</h2>
+            <p>Deixe conosco os detalhes do seu evento e entraremos em contato em breve</p>
+        </div>
+    </section>
+
+    <section class="agenda-container">
+        <h2>📅 Formulário de Agendamento</h2>
+        
+        <div class="success-message" id="successMessage">
+            ✓ Solicitação enviada com sucesso! Entraremos em contato em breve.
+        </div>
+
+        <div class="error-message" id="errorMessage">
+            ⚠️ Por favor, preencha todos os campos obrigatórios!
+        </div>
+
+        <form id="formAgendamento" onsubmit="enviarAgendamento(event)">
+            <!-- Seção Evento -->
+            <div class="form-section">
+                <h3>Informações do Evento</h3>
+                
+                <label for="tipoEvento">Tipo de Evento *</label>
+                <select id="tipoEvento" name="tipoEvento" required>
+                    <option value="">-- Selecione --</option>
+                    <option value="Casamento">💒 Casamento</option>
+                    <option value="Aniversário">🎂 Aniversário</option>
+                    <option value="Corporativo">💼 Evento Corporativo</option>
+                    <option value="Festa de 15 anos">👗 Festa de 15 Anos</option>
+                    <option value="Reunião Familiar">👨‍👩‍👧‍👦 Reunião Familiar</option>
+                    <option value="Confraternização">🎉 Confraternização</option>
+                    <option value="Outro">Outro</option>
+                </select>
+
+                <label for="data">Data do Evento *</label>
+                <input type="date" id="data" name="data" required>
+
+                <label for="hora">Horário Desejado *</label>
+                <input type="time" id="hora" name="hora" required>
+
+                <label for="quantidadePessoas">Quantidade de Pessoas *</label>
+                <input type="number" id="quantidadePessoas" name="quantidadePessoas" min="10" placeholder="Mínimo 10 pessoas" required>
+            </div>
+
+            <!-- Seção Pacote -->
+            <div class="form-section">
+                <h3>Escolha o Pacote</h3>
+                
+                <label for="tipoPacote">Tipo de Buffet *</label>
+                <select id="tipoPacote" name="tipoPacote" required>
+                    <option value="">-- Selecione --</option>
+                    <option value="Coquetel">🥂 Coquetel</option>
+                    <option value="Paella Caipira">🍝 Paella Caipira</option>
+                    <option value="Buffet Jantar">🍽️ Buffet Jantar</option>
+                    <option value="Churrasco">🍖 Churrasco</option>
+                    <option value="Personalizado">✨ Personalizado</option>
+                </select>
+
+                <label for="servico">Serviços Adicionais</label>
+                <select id="servico" name="servico">
+                    <option value="">-- Sem serviços adicionais --</option>
+                    <option value="Garçom">👨‍💼 Garçom (R$ conforme orçamento)</option>
+                    <option value="Louça">🍽️ Louça (R$ conforme orçamento)</option>
+                    <option value="Completo">🎪 Pacote Completo</option>
+                </select>
+            </div>
+
+            <!-- Seção Dados Pessoais -->
+            <div class="form-section">
+                <h3>Seus Dados</h3>
+                
+                <div class="input-row">
+                    <div>
+                        <label for="nome">Nome Completo *</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div>
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+
+                <div class="input-row">
+                    <div>
+                        <label for="telefone">Telefone / WhatsApp *</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(19) 99999-9999" required>
+                    </div>
+                    <div>
+                        <label for="cidade">Cidade *</label>
+                        <input type="text" id="cidade" name="cidade" placeholder="Ex: Campinas" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção Observações -->
+            <div class="form-section">
+                <h3>Observações Adicionais</h3>
+                
+                <label for="observacoes">Alguma preferência ou restrição alimentar?</label>
+                <textarea id="observacoes" name="observacoes" placeholder="Ex: vegetariano, sem glúten, etc."></textarea>
+
+                <label for="local">Local do Evento (Endereço)</label>
+                <textarea id="local" name="local" placeholder="Rua, número, bairro, cidade..."></textarea>
+            </div>
+
+            <!-- Botões -->
+            <div class="button-group">
+                <button type="submit" class="package-btn">📨 Enviar Solicitação</button>
+                <button type="reset" class="package-btn button-secondary">🔄 Limpar Formulário</button>
+            </div>
+        </form>
+
+        <section style="margin-top: 60px; padding-top: 40px; border-top: 2px solid rgba(139, 25, 25, 0.1); text-align: center;">
+            <h3 style="color: #8b1919; margin-bottom: 20px;">Contato Direto</h3>
+            <p style="font-size: 16px; color: #666; margin-bottom: 20px;">Prefere falar diretamente? Entre em contato através do WhatsApp!</p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="https://wa.me/5519996393999?text=Olá%20Marta!%20Gostaria%20de%20um%20orçamento%20para%20meu%20evento" target="_blank" class="hero-cta" style="background-color: #25d366; display: inline-block; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; color: white; font-size: 14px;">📱 WhatsApp Marta</a>
+                <a href="https://wa.me/5519997461087?text=Olá%20Rosangela!%20Gostaria%20de%20um%20orçamento%20para%20meu%20evento" target="_blank" class="hero-cta" style="background-color: #25d366; display: inline-block; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; color: white; font-size: 14px;">📱 WhatsApp Rosangela</a>
+            </div>
+        </section>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div>
+                <h4>Buffet Soligueto</h4>
+                <p>Sua festa merece qualidade, dedicação e amor em cada detalhe.</p>
+            </div>
+            <div>
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="buffesoligueto.html">Início</a></li>
+                    <li><a href="menu.html">Cardápio</a></li>
+                    <li><a href="agendamentos.html">Agendar</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contato Rápido</h4>
+                <ul>
+                    <li><strong>Marta:</strong> <a href="https://wa.me/5519996393999">(19) 99639-3999</a></li>
+                    <li><strong>Rosangela:</strong> <a href="https://wa.me/5519997461087">(19) 99746-1087</a></li>
+                    <li><strong>Email:</strong> <a href="mailto:buffetsoligueto@gmail.com">buffetsoligueto@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Buffet Soligueto. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function enviarAgendamento(event) {
+            event.preventDefault();
+            
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const telefone = document.getElementById('telefone').value;
+            const tipoEvento = document.getElementById('tipoEvento').value;
+            const data = document.getElementById('data').value;
+            const hora = document.getElementById('hora').value;
+            const qtd = document.getElementById('quantidadePessoas').value;
+            const tipoPacote = document.getElementById('tipoPacote').value;
+            const servico = document.getElementById('servico').value;
+            const cidade = document.getElementById('cidade').value;
+            const observacoes = document.getElementById('observacoes').value;
+            const local = document.getElementById('local').value;
+
+            if (!nome || !email || !telefone || !tipoEvento || !data || !hora || !qtd || !tipoPacote || !cidade) {
+                document.getElementById('errorMessage').style.display = 'block';
+                document.getElementById('successMessage').style.display = 'none';
+                setTimeout(() => {
+                    document.getElementById('errorMessage').style.display = 'none';
+                }, 4000);
+                return;
+            }
+
+            const whatsappNumero = '5519996393999';
+            const mensagem = `🎉 *NOVO AGENDAMENTO DO SITE* 🎉\n\n` +
+                `👤 *Nome:* ${nome}\n` +
+                `📧 *Email:* ${email}\n` +
+                `📱 *Telefone:* ${telefone}\n` +
+                `🏙️ *Cidade:* ${cidade}\n\n` +
+                `📋 *EVENTO*\n` +
+                `🎂 *Tipo:* ${tipoEvento}\n` +
+                `📅 *Data:* ${data}\n` +
+                `🕐 *Hora:* ${hora}\n` +
+                `👥 *Pessoas:* ${qtd}\n\n` +
+                `🍽️ *SERVIÇOS*\n` +
+                `📦 *Pacote:* ${tipoPacote}\n` +
+                `➕ *Adicionais:* ${servico || 'Nenhum'}\n\n` +
+                `📝 *LOCAL:* ${local || 'Não informado'}\n\n` +
+                `💬 *OBSERVAÇÕES:* ${observacoes || 'Nenhuma'}\n\n` +
+                `_Mensagem gerada através do site Buffet Soligueto_`;
+
+            const whatsappLink = `https://wa.me/${whatsappNumero}?text=${encodeURIComponent(mensagem)}`;
+            
+            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('errorMessage').style.display = 'none';
+            
+            setTimeout(() => {
+                window.open(whatsappLink, '_blank');
+                document.getElementById('formAgendamento').reset();
+                document.getElementById('successMessage').style.display = 'none';
+            }, 1500);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossos Eventos - Buffet Soligueto</title>
+    <link rel="stylesheet" href="buffe.css">
+    <link rel="stylesheet" href="eventos.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🍴 Buffet Soligueto</h1>
+            <nav>
+                <ul>
+                    <li><a href="buffesoligueto.html">Início</a></li>
+                    <li><a href="menu.html">Cardápio</a></li>
+                    <li><a href="agendamentos.html">Agendar</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" style="padding: 80px 20px; background: linear-gradient(135deg, rgba(139, 25, 25, 0.8), rgba(107, 21, 21, 0.8)), url('https://images.unsplash.com/photo-1540575467063-178f50a54c47?w=800&h=400&fit=crop') center/cover;">
+        <div class="container">
+            <h2>Nossos Eventos</h2>
+            <p>Confira os eventos que já realizamos com sucesso e qualidade</p>
+        </div>
+    </section>
+
+    <section class="eventos-container">
+        <div class="container">
+            <h2>Galeria de Eventos</h2>
+
+            <!-- Botões de categorias -->
+            <div class="eventos-menu">
+                <button onclick="mostrarEvento('casamento')" class="active">💒 Casamentos</button>
+                <button onclick="mostrarEvento('15anos')">👗 15 Anos</button>
+                <button onclick="mostrarEvento('aniversario')">🎂 Aniversários</button>
+                <button onclick="mostrarEvento('corporativo')">💼 Corporativo</button>
+            </div>
+
+            <!-- Galeria Casamento -->
+            <div class="galeria show" id="casamento">
+                <h3>Casamentos Inesquecíveis</h3>
+                <div class="fotos">
+                    <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=400&h=400&fit=crop" alt="Casamento 1" onclick="abrirModal(this.src)">
+                    <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&h=400&fit=crop" alt="Casamento 2" onclick="abrirModal(this.src)">
+                    <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=400&h=400&fit=crop" alt="Casamento 3" onclick="abrirModal(this.src)">
+                </div>
+            </div>
+
+            <!-- Galeria 15 Anos -->
+            <div class="galeria" id="15anos">
+                <h3>Festas de 15 Anos</h3>
+                <div class="fotos">
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=400&fit=crop" alt="15 Anos 1" onclick="abrirModal(this.src)">
+                    <img src="https://images.unsplash.com/photo-1502684892290-ce0505bf900d?w=400&h=400&fit=crop" alt="15 Anos 2" onclick="abrirModal(this.src)">
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=400&fit=crop" alt="15 Anos 3" onclick="abrirModal(this.src)">
+                </div>
+            </div>
+
+            <!-- Galeria Aniversário -->
+            <div class="galeria" id="aniversario">
+                <h3>Festas de Aniversário</h3>
+                <div class="fotos">
+                    <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=400&h=400&fit=crop" alt="Aniversário 1" onclick="abrirModal(this.src)">
+                    <img src="https://images.unsplash.com/photo-1533995405351-730f2c51b5b0?w=400&h=400&fit=crop" alt="Aniversário 2" onclick="abrirModal(this.src)">
+                    <img src="https://images.unsplash.com/photo-1558636508-e0db3814bd1d?w=400&h=400&fit=crop" alt="Aniversário 3" onclick="abrirModal(this.src)">
+                </div>
+            </div>
+
+            <!-- Galeria Corporativo -->
+            <div class="galeria" id="corporativo">
+                <h3>Eventos Corporativos</h3>
+                <div class="fotos">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop" alt="Corporativo 1" onclick="abrirModal(this.src)">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178f50a54c47?w=400&h=400&fit=crop" alt="Corporativo 2" onclick="abrirModal(this.src)">
+                    <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=400&fit=crop" alt="Corporativo 3" onclick="abrirModal(this.src)">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para imagens ampliadas -->
+    <div id="imageModal" class="image-modal">
+        <div class="modal-image-content">
+            <span class="close-modal" onclick="fecharModal()">&times;</span>
+            <img id="modalImg" src="" alt="Evento ampliado">
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <section style="padding: 60px 20px; background: linear-gradient(135deg, #f9f7f4 0%, #fff 100%); text-align: center;">
+        <div class="container">
+            <h2 style="color: #8b1919; margin-bottom: 20px; font-size: 32px;">Gostou? Agende o Seu Evento!</h2>
+            <p style="font-size: 18px; color: #666; margin-bottom: 30px;">Veja como o Buffet Soligueto pode transformar seu evento em um momento memorável.</p>
+            <a href="agendamentos.html" class="hero-cta" style="display: inline-block; background-color: #f4a261; color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 16px;">Agendar Agora</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div>
+                <h4>Buffet Soligueto</h4>
+                <p>Realizamos eventos especiais com profissionalismo e excelência em todos os detalhes.</p>
+            </div>
+            <div>
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="buffesoligueto.html">Início</a></li>
+                    <li><a href="menu.html">Cardápio</a></li>
+                    <li><a href="agendamentos.html">Agendar</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contato</h4>
+                <ul>
+                    <li><strong>Marta:</strong> <a href="https://wa.me/5519996393999">(19) 99639-3999</a></li>
+                    <li><strong>Rosangela:</strong> <a href="https://wa.me/5519997461087">(19) 99746-1087</a></li>
+                    <li><strong>Email:</strong> <a href="mailto:buffetsoligueto@gmail.com">buffetsoligueto@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Buffet Soligueto. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function mostrarEvento(id) {
+            // Hide all galerias
+            const galerias = document.querySelectorAll('.galeria');
+            galerias.forEach(galeria => galeria.classList.remove('show'));
+            
+            // Remove active class from all buttons
+            const botoes = document.querySelectorAll('.eventos-menu button');
+            botoes.forEach(botao => botao.classList.remove('active'));
+            
+            // Show selected galeria
+            document.getElementById(id).classList.add('show');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        function abrirModal(src) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            modal.classList.add('show');
+            modalImg.src = src;
+        }
+
+        function fecharModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('show');
+        }
+
+        // Fechar modal ao clicar fora da imagem
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target === modal) {
+                fecharModal();
+            }
+        }
+    </script>
+</body>
+</html>

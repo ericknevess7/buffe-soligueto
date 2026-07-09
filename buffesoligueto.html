@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buffet Soligueto - Eventos e Celebrações</title>
+    <link rel="stylesheet" href="buffe.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>🍴 Buffet Soligueto</h1>
+            <nav>
+                <ul>
+                    <li><a href="buffesoligueto.html">Início</a></li>
+                    <li><a href="menu.html">Cardápio</a></li>
+                    <li><a href="#buffets">Galeria</a></li>
+                    <li><a href="#pacotes">Pacotes</a></li>
+                    <li><a href="agendamentos.html">Agendar</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Bem-vindo ao Buffet Soligueto!</h2>
+            <p>Transforme seu evento em uma experiência inesquecível com nossos pratos deliciosos e atendimento excepcional</p>
+            <a href="agendamentos.html" class="hero-cta">Agendar Agora</a>
+        </div>
+    </section>
+
+    <!-- Buffets Section -->
+    <section id="buffets" class="gallery-section">
+        <div class="container">
+            <h2>Nossa Galeria</h2>
+            <div class="gallery">
+                <div class="gallery-item"><img src="E:\bufee soligueto\imgs\mesa1.jpeg" alt="Prato 1" onclick="openModal(this.src)"></div>
+                <div class="gallery-item"><img src="E:\bufee soligueto\imgs\mesa2.jpeg" alt="Prato 2" onclick="openModal(this.src)"></div>
+                <div class="gallery-item"><img src="E:\bufee soligueto\imgs\mesa3.jfif" alt="Prato 3" onclick="openModal(this.src)"></div>
+                <div class="gallery-item"><img src="E:\bufee soligueto\imgs\mesa4.jfif" alt="Prato 4" onclick="openModal(this.src)"></div>
+                <div class="gallery-item"><img src="E:\bufee soligueto\imgs\mesa5.jfif" alt="Prato 5" onclick="openModal(this.src)"></div>
+                <div class="gallery-item"><img src="E:\bufee soligueto\imgs\porcorolete.jpeg" alt="Prato 6" onclick="openModal(this.src)"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aperitivos Section -->
+    <section id="aperitivos" class="gallery-section">
+        <div class="container">
+            <h2>Aperitivos & Complementos</h2>
+            <div class="gallery">
+                <div class="gallery-item"><img src="E:\bufee soligueto\imgs\aperitivo1.jpeg" alt="Aperitivo 1" onclick="openModal(this.src)"></div>
+                <div class="gallery-item"><img src="E:\bufee soligueto\imgs\aperitivo2.jpeg" alt="Aperitivo 2" onclick="openModal(this.src)"></div>
+                <div class="gallery-item"><img src="E:\bufee soligueto\imgs\aperitivo3.jpeg" alt="Aperitivo 3" onclick="openModal(this.src)"></div>
+                <div class="gallery-item"><img src="E:\bufee soligueto\imgs\aperitivo4.jfif" alt="Aperitivo 4" onclick="openModal(this.src)"></div>
+                <div class="gallery-item"><img src="E:\bufee soligueto\imgs\aperitivo5.jfif" alt="Aperitivo 5" onclick="openModal(this.src)"></div>
+                <div class="gallery-item"><img src="E:\bufee soligueto\imgs\aperitivo6.jfif" alt="Aperitivo 6" onclick="openModal(this.src)"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pacotes Section -->
+    <section id="pacotes" class="packages-section">
+        <div class="container">
+            <h2>Nossos Pacotes</h2>
+            <div class="packages-container">
+                <div class="package-card">
+                    <h3>🍽️ Coquetel</h3>
+                    <div class="package-price">Sob <span>consulta</span></div>
+                    <ul class="package-features">
+                        <li>Entradas variadas</li>
+                        <li>Salgados assados</li>
+                        <li>Salgados fritos</li>
+                        <li>Docinhos</li>
+                        <li>Bebidas incluídas</li>
+                        <li>Garçom incluído</li>
+                    </ul>
+                    <button class="package-btn" onclick="agendar()">Solicitar Orçamento</button>
+                </div>
+
+                <div class="package-card featured">
+                    <h3>🎉 Buffet Completo</h3>
+                    <div class="package-price">Sob <span>consulta</span></div>
+                    <ul class="package-features">
+                        <li>Prato principal</li>
+                        <li>Acompanhamentos</li>
+                        <li>Saladas frescas</li>
+                        <li>Sobremesas</li>
+                        <li>Bebidas variadas</li>
+                        <li>Garçons & louça</li>
+                    </ul>
+                    <button class="package-btn" onclick="agendar()">Solicitar Orçamento</button>
+                </div>
+
+                <div class="package-card">
+                    <h3>🍖 Churrasco</h3>
+                    <div class="package-price">Sob <span>consulta</span></div>
+                    <ul class="package-features">
+                        <li>Carnes selecionadas</li>
+                        <li>Arroz e acompanhamentos</li>
+                        <li>Saladas variadas</li>
+                        <li>Pão francês quentinho</li>
+                        <li>Bebidas incluídas</li>
+                        <li>Atendimento completo</li>
+                    </ul>
+                    <button class="package-btn" onclick="agendar()">Solicitar Orçamento</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2>Entre em Contato</h2>
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <h3>Telefone - Marta</h3>
+                        <a href="https://wa.me/5519996393999" target="_blank">(19) 99639-3999</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <h3>Telefone - Rosangela</h3>
+                        <a href="https://wa.me/5519997461087" target="_blank">(19) 99746-1087</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div>
+                        <h3>E-mail</h3>
+                        <a href="mailto:buffetsoligueto@gmail.com">buffetsoligueto@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form" onsubmit="enviarContato(event)">
+                <h3>Enviar Mensagem</h3>
+                <div class="form-group">
+                    <label for="nome">Nome *</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone" name="telefone">
+                </div>
+                <div class="form-group">
+                    <label for="assunto">Assunto *</label>
+                    <input type="text" id="assunto" name="assunto" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem *</label>
+                    <textarea id="mensagem" name="mensagem" required></textarea>
+                </div>
+                <button type="submit" class="package-btn">Enviar Mensagem</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Modal para Galeria -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="" class="modal-img">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div>
+                <h4>Buffet Soligueto</h4>
+                <p>Proporcionamos experiências gastronômicas inesquecíveis para seus eventos especiais.</p>
+                <div class="social-links">
+                    <a href="https://wa.me/5519996393999" target="_blank" title="WhatsApp">📱</a>
+                    <a href="mailto:buffetsoligueto@gmail.com" title="Email">📧</a>
+                </div>
+            </div>
+            <div>
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="menu.html">Cardápio</a></li>
+                    <li><a href="agendamentos.html">Agendar</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contato Direto</h4>
+                <ul>
+                    <li><strong>Marta:</strong> <a href="tel:+5519996393999">(19) 99639-3999</a></li>
+                    <li><strong>Rosangela:</strong> <a href="tel:+5519997461087">(19) 99746-1087</a></li>
+                    <li><strong>Email:</strong> <a href="mailto:buffetsoligueto@gmail.com">buffetsoligueto@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Buffet Soligueto. Todos os direitos reservados. | Desenvolvido com 💛</p>
+        </div>
+    </footer>
+
+    <script>\n        function openModal(src) {\n            const modal = document.getElementById('imageModal');\n            const modalImg = document.getElementById('modalImage');\n            modal.classList.add('show');\n            modalImg.src = src;\n        }\n\n        function closeModal() {\n            const modal = document.getElementById('imageModal');\n            modal.classList.remove('show');\n        }\n\n        window.onclick = function(event) {\n            const modal = document.getElementById('imageModal');\n            if (event.target === modal) {\n                closeModal();\n            }\n        }\n\n        function agendar() {\n            window.location.href = 'agendamentos.html';\n        }\n\n        function enviarContato(event) {\n            event.preventDefault();\n            const nome = document.getElementById('nome').value;\n            const email = document.getElementById('email').value;\n            const telefone = document.getElementById('telefone').value;\n            const assunto = document.getElementById('assunto').value;\n            const mensagem = document.getElementById('mensagem').value;\n\n            const whatsappNumero = '5519996393999';\n            const whatsappMensagem = `Olá! Novo contato do site:\\n\\nNome: ${nome}\\nEmail: ${email}\\nTelefone: ${telefone}\\nAssunto: ${assunto}\\nMensagem: ${mensagem}`;\n            const whatsappLink = `https://wa.me/${whatsappNumero}?text=${encodeURIComponent(whatsappMensagem)}`;\n\n            window.open(whatsappLink, '_blank');\n            document.querySelector('form').reset();\n        }\n    </script>\n</body>\n</html>
+

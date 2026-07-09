@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Buffet Soligueto</title>
+    <link rel="stylesheet" href="buffe.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🍴 Buffet Soligueto</h1>
+            <nav>
+                <ul>
+                    <li><a href="buffesoligueto.html">Início</a></li>
+                    <li><a href="menu.html">Cardápio</a></li>
+                    <li><a href="agendamentos.html">Agendar</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" style="padding: 80px 20px; background: linear-gradient(135deg, rgba(139, 25, 25, 0.8), rgba(107, 21, 21, 0.8)), url('imgs/bufee2.jfif') center/cover;">
+        <div class="container">
+            <h2>Fale Conosco</h2>
+            <p>Estamos sempre prontos para responder suas dúvidas e atender melhor</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2>Contato Direto</h2>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <h3>Marta</h3>
+                        <a href="https://wa.me/5519996393999" target="_blank">(19) 99639-3999</a>
+                        <p>Disponível para agendamentos e orçamentos</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <h3>Rosangela</h3>
+                        <a href="https://wa.me/5519997461087" target="_blank">(19) 99746-1087</a>
+                        <p>Atendimento e suporte em eventos</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div>
+                        <h3>E-mail</h3>
+                        <a href="mailto:buffetsoligueto@gmail.com">buffetsoligueto@gmail.com</a>
+                        <p>Para dúvidas gerais e propostas</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">🕐</div>
+                    <div>
+                        <h3>Horário de Atendimento</h3>
+                        <p>Segunda a Sexta: 8h às 18h</p>
+                        <p>Sábado: 8h às 14h</p>
+                        <p>Domingo: Fechado</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <h3>Localização</h3>
+                        <p>Campinas - SP</p>
+                        <p>Atendemos toda a região metropolitana</p>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" onsubmit="enviarContato(event)">
+                <h3>📧 Enviar Mensagem</h3>
+                
+                <div class="form-group">
+                    <label for="nome">Nome Completo *</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefone">Telefone / WhatsApp</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(19) 99999-9999">
+                </div>
+
+                <div class="form-group">
+                    <label for="assunto">Assunto *</label>
+                    <input type="text" id="assunto" name="assunto" placeholder="Ex: Orçamento para evento" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagem">Mensagem *</label>
+                    <textarea id="mensagem" name="mensagem" placeholder="Descreva sua dúvida ou solicitação..." required></textarea>
+                </div>
+
+                <button type="submit" class="package-btn">Enviar Mensagem</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Mapa (Opcional - pode ser integrado Google Maps) -->
+    <section style="padding: 60px 20px; background-color: #f9f7f4; text-align: center;">
+        <div class="container">
+            <h2 style="color: #8b1919; margin-bottom: 30px; font-size: 32px;">Perguntas Frequentes</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; text-align: left;">
+                <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <h4 style="color: #8b1919; margin-bottom: 10px; font-size: 18px;">Qual é o valor mínimo de pessoas?</h4>
+                    <p style="color: #666; line-height: 1.6;">O mínimo é 10 pessoas. Acima disso, temos várias opções de pacotes personalizáveis.</p>
+                </div>
+
+                <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <h4 style="color: #8b1919; margin-bottom: 10px; font-size: 18px;">Como funciona o agendamento?</h4>
+                    <p style="color: #666; line-height: 1.6;">Você preenche o formulário de agendamento, entramos em contato para confirmar detalhes e enviar orçamento.</p>
+                </div>
+
+                <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <h4 style="color: #8b1919; margin-bottom: 10px; font-size: 18px;">Vocês entregam em domicílio?</h4>
+                    <p style="color: #666; line-height: 1.6;">Sim! Realizamos eventos em qualquer local da região. Entraremos em contato para acordar detalhes.</p>
+                </div>
+
+                <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <h4 style="color: #8b1919; margin-bottom: 10px; font-size: 18px;">Posso personalizar o menu?</h4>
+                    <p style="color: #666; line-height: 1.6;">Absolutamente! Temos pacotes flexíveis que se adaptam ao seu gosto e necessidades.</p>
+                </div>
+
+                <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <h4 style="color: #8b1919; margin-bottom: 10px; font-size: 18px;">Vocês atendem restrições alimentares?</h4>
+                    <p style="color: #666; line-height: 1.6;">Sim! Informamos sobre vegetariano, vegano, sem glúten e outras restrições no formulário.</p>
+                </div>
+
+                <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <h4 style="color: #8b1919; margin-bottom: 10px; font-size: 18px;">Qual o prazo para agendamento?</h4>
+                    <p style="color: #666; line-height: 1.6;">O ideal é agendar com 15-30 dias de antecedência, mas aceitamos com menos prazo conforme disponibilidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section style="padding: 60px 20px; background: linear-gradient(135deg, #8b1919 0%, #6b1515 100%); color: white; text-align: center;">
+        <div class="container">
+            <h2 style="margin-bottom: 20px; font-size: 32px;">Vamos Juntos Criar seu Evento?</h2>
+            <p style="font-size: 18px; margin-bottom: 30px; opacity: 0.9;">Clique no botão abaixo para começar seu agendamento!</p>
+            <a href="agendamentos.html" class="hero-cta" style="display: inline-block; background-color: #f4a261; color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 16px;">Agendar Agora</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div>
+                <h4>Buffet Soligueto</h4>
+                <p>Realizando sonhos através da gastronomia desde 2024.</p>
+            </div>
+            <div>
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="buffesoligueto.html">Início</a></li>
+                    <li><a href="menu.html">Cardápio</a></li>
+                    <li><a href="agendamentos.html">Agendar</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contato</h4>
+                <ul>
+                    <li><strong>Marta:</strong> <a href="https://wa.me/5519996393999">(19) 99639-3999</a></li>
+                    <li><strong>Rosangela:</strong> <a href="https://wa.me/5519997461087">(19) 99746-1087</a></li>
+                    <li><strong>Email:</strong> <a href="mailto:buffetsoligueto@gmail.com">buffetsoligueto@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Buffet Soligueto. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function enviarContato(event) {
+            event.preventDefault();
+            
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const telefone = document.getElementById('telefone').value;
+            const assunto = document.getElementById('assunto').value;
+            const mensagem = document.getElementById('mensagem').value;
+
+            const whatsappNumero = '5519996393999';
+            const whatsappMensagem = `📬 *NOVO CONTATO DO SITE*\n\n` +
+                `👤 *Nome:* ${nome}\n` +
+                `📧 *Email:* ${email}\n` +
+                `📱 *Telefone:* ${telefone || 'Não informado'}\n\n` +
+                `📋 *Assunto:* ${assunto}\n` +
+                `💬 *Mensagem:* ${mensagem}`;
+
+            const whatsappLink = `https://wa.me/${whatsappNumero}?text=${encodeURIComponent(whatsappMensagem)}`;
+            
+            window.open(whatsappLink, '_blank');
+            document.querySelector('form').reset();
+            alert('✓ Mensagem será enviada via WhatsApp!');
+        }
+    </script>
+</body>
+</html>
