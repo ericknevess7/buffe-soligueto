@@ -9,6 +9,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --primary-color: #8b1919;
     --primary-dark: #6b1515;
@@ -29,6 +33,8 @@ body {
     color: var(--text-color);
     background-color: var(--white);
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -49,6 +55,7 @@ header {
     top: 0;
     z-index: 1000;
     box-shadow: var(--shadow);
+    backdrop-filter: blur(8px);
 }
 
 header .container {
@@ -63,6 +70,7 @@ header h1 {
     font-weight: 700;
     letter-spacing: 1px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    line-height: 1.2;
 }
 
 /* Navegação */
@@ -135,13 +143,16 @@ nav ul li ul li a:hover {
 
 .hero {
     background: linear-gradient(135deg, rgba(139, 25, 25, 0.8), rgba(107, 21, 21, 0.8)), 
-                url('imgs/bufee1.jfif') center/cover;
+                url('imgs/mesa3.jfif') center/cover;
     background-attachment: fixed;
     color: var(--white);
     text-align: center;
     padding: 150px 20px;
     position: relative;
     overflow: hidden;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
 }
 
 .hero::before {
@@ -207,6 +218,10 @@ nav ul li ul li a:hover {
 .gallery-section {
     padding: 80px 20px;
     background-color: var(--white);
+}
+
+.gallery-section .container {
+    max-width: 1200px;
 }
 
 .gallery-section:nth-child(even) {
@@ -368,7 +383,7 @@ nav ul li ul li a:hover {
 .package-card {
     background: var(--white);
     padding: 40px 30px;
-    border-radius: 12px;
+    border-radius: 16px;
     text-align: center;
     box-shadow: var(--shadow);
     transition: all 0.3s ease;
@@ -465,6 +480,10 @@ nav ul li ul li a:hover {
     padding: 80px 20px;
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     color: var(--white);
+}
+
+.contact-form, .contact-info {
+    border-radius: 18px;
 }
 
 .contact-content {
@@ -780,17 +799,45 @@ footer ul li {
    ======================================== */
 
 @media (max-width: 768px) {
+    header {
+        position: relative;
+        padding: 16px 0;
+    }
+
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
     header h1 {
         font-size: 24px;
     }
 
     nav ul {
-        gap: 2px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
     }
 
     nav ul li a {
         font-size: 14px;
         padding: 10px 12px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 999px;
+    }
+
+    nav ul li a:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: none;
+    }
+
+    .hero {
+        padding: 100px 20px;
+        background-attachment: scroll;
     }
 
     .hero h2 {
@@ -820,9 +867,8 @@ footer ul li {
 }
 
 @media (max-width: 480px) {
-    header .container {
-        flex-direction: column;
-        gap: 15px;
+    header {
+        padding: 14px 0;
     }
 
     header h1 {
@@ -830,18 +876,17 @@ footer ul li {
     }
 
     nav ul {
-        flex-direction: column;
-        width: 100%;
-        gap: 5px;
+        grid-template-columns: 1fr;
+        gap: 6px;
     }
 
     nav ul li a {
-        font-size: 12px;
-        padding: 8px 10px;
+        font-size: 13px;
+        padding: 9px 10px;
     }
 
     .hero {
-        padding: 80px 20px;
+        padding: 90px 16px;
     }
 
     .hero h2 {
