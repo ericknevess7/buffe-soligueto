@@ -11,7 +11,12 @@
     <header>
         <div class="container">
             <h1>🍴 Buffet Soligueto</h1>
-            <nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-menu" id="navMenu">
                 <ul>
                     <li><a href="index.html">Início</a></li>
                     <li><a href="menu.html">Cardápio</a></li>
@@ -210,5 +215,24 @@
         </div>
     </footer>
 
-    <script>\n        function openModal(src) {\n            const modal = document.getElementById('imageModal');\n            const modalImg = document.getElementById('modalImage');\n            modal.classList.add('show');\n            modalImg.src = src;\n        }\n\n        function closeModal() {\n            const modal = document.getElementById('imageModal');\n            modal.classList.remove('show');\n        }\n\n        window.onclick = function(event) {\n            const modal = document.getElementById('imageModal');\n            if (event.target === modal) {\n                closeModal();\n            }\n        }\n\n        function agendar() {\n            window.location.href = 'agendamentos.html';\n        }\n\n        function enviarContato(event) {\n            event.preventDefault();\n            const nome = document.getElementById('nome').value;\n            const email = document.getElementById('email').value;\n            const telefone = document.getElementById('telefone').value;\n            const assunto = document.getElementById('assunto').value;\n            const mensagem = document.getElementById('mensagem').value;\n\n            const whatsappNumero = '5519996393999';\n            const whatsappMensagem = `Olá! Novo contato do site:\\n\\nNome: ${nome}\\nEmail: ${email}\\nTelefone: ${telefone}\\nAssunto: ${assunto}\\nMensagem: ${mensagem}`;\n            const whatsappLink = `https://wa.me/${whatsappNumero}?text=${encodeURIComponent(whatsappMensagem)}`;\n\n            window.open(whatsappLink, '_blank');\n            document.querySelector('form').reset();\n        }\n    </script>\n</body>\n</html>
+    <script>
+        // Menu hambúrguer
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+        
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+
+        function openModal(src) {
+            const modal = document.getElementById('imageModal');\n            const modalImg = document.getElementById('modalImage');\n            modal.classList.add('show');\n            modalImg.src = src;\n        }\n\n        function closeModal() {\n            const modal = document.getElementById('imageModal');\n            modal.classList.remove('show');\n        }\n\n        window.onclick = function(event) {\n            const modal = document.getElementById('imageModal');\n            if (event.target === modal) {\n                closeModal();\n            }\n        }\n\n        function agendar() {\n            window.location.href = 'agendamentos.html';\n        }\n\n        function enviarContato(event) {\n            event.preventDefault();\n            const nome = document.getElementById('nome').value;\n            const email = document.getElementById('email').value;\n            const telefone = document.getElementById('telefone').value;\n            const assunto = document.getElementById('assunto').value;\n            const mensagem = document.getElementById('mensagem').value;\n\n            const whatsappNumero = '5519996393999';\n            const whatsappMensagem = `Olá! Novo contato do site:\\n\\nNome: ${nome}\\nEmail: ${email}\\nTelefone: ${telefone}\\nAssunto: ${assunto}\\nMensagem: ${mensagem}`;\n            const whatsappLink = `https://wa.me/${whatsappNumero}?text=${encodeURIComponent(whatsappMensagem)}`;\n\n            window.open(whatsappLink, '_blank');\n            document.querySelector('form').reset();\n        }\n    </script>\n</body>\n</html>
 

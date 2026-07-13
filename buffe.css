@@ -73,7 +73,47 @@ header h1 {
     line-height: 1.2;
 }
 
+/* Botão Hambúrguer */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    width: 24px;
+    height: 3px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
 /* Navegação */
+.nav-menu {
+    display: contents;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -801,38 +841,63 @@ footer ul li {
 @media (max-width: 768px) {
     header {
         position: relative;
-        padding: 16px 0;
+        padding: 14px 0;
     }
 
     header .container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
     }
 
     header h1 {
-        font-size: 24px;
+        font-size: 22px;
+        flex-shrink: 0;
+    }
+
+    /* Mostrar hambúrguer */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Menu dropdown */
+    .nav-menu {
+        display: none !important;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+        box-shadow: var(--shadow-hover);
+        z-index: 999;
+        animation: slideDown 0.3s ease;
+    }
+
+    .nav-menu.active {
+        display: block !important;
     }
 
     nav ul {
+        flex-direction: column;
+        gap: 0;
         width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px;
+    }
+
+    nav ul li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     nav ul li a {
-        font-size: 14px;
-        padding: 10px 12px;
-        text-align: center;
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        border-radius: 999px;
+        padding: 16px 20px;
+        font-size: 15px;
+        border-radius: 0;
+        transition: all 0.2s ease;
     }
 
     nav ul li a:hover {
-        background: rgba(255, 255, 255, 0.2);
-        transform: none;
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateX(5px);
     }
 
     .hero {
@@ -868,11 +933,11 @@ footer ul li {
 
 @media (max-width: 480px) {
     header {
-        padding: 14px 0;
+        padding: 12px 0;
     }
 
     header h1 {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     nav ul {
@@ -882,19 +947,19 @@ footer ul li {
 
     nav ul li a {
         font-size: 13px;
-        padding: 9px 10px;
+        padding: 14px 18px;
     }
 
     .hero {
-        padding: 90px 16px;
+        padding: 80px 16px;
     }
 
     .hero h2 {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .hero p {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .gallery {
@@ -902,11 +967,16 @@ footer ul li {
     }
 
     .contact-form {
-        padding: 20px;
+        padding: 16px;
     }
 
     footer .container {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 16px;
+    }
+
+    .package-btn {
+        padding: 12px 20px;
+        font-size: 14px;
     }
 }
