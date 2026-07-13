@@ -233,6 +233,46 @@
             });
         });
 
+        function agendar() {
+            window.location.href = 'agendamentos.html';
+        }
+
         function openModal(src) {
-            const modal = document.getElementById('imageModal');\n            const modalImg = document.getElementById('modalImage');\n            modal.classList.add('show');\n            modalImg.src = src;\n        }\n\n        function closeModal() {\n            const modal = document.getElementById('imageModal');\n            modal.classList.remove('show');\n        }\n\n        window.onclick = function(event) {\n            const modal = document.getElementById('imageModal');\n            if (event.target === modal) {\n                closeModal();\n            }\n        }\n\n        function agendar() {\n            window.location.href = 'agendamentos.html';\n        }\n\n        function enviarContato(event) {\n            event.preventDefault();\n            const nome = document.getElementById('nome').value;\n            const email = document.getElementById('email').value;\n            const telefone = document.getElementById('telefone').value;\n            const assunto = document.getElementById('assunto').value;\n            const mensagem = document.getElementById('mensagem').value;\n\n            const whatsappNumero = '5519996393999';\n            const whatsappMensagem = `Olá! Novo contato do site:\\n\\nNome: ${nome}\\nEmail: ${email}\\nTelefone: ${telefone}\\nAssunto: ${assunto}\\nMensagem: ${mensagem}`;\n            const whatsappLink = `https://wa.me/${whatsappNumero}?text=${encodeURIComponent(whatsappMensagem)}`;\n\n            window.open(whatsappLink, '_blank');\n            document.querySelector('form').reset();\n        }\n    </script>\n</body>\n</html>
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.classList.add('show');
+            modalImg.src = src;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('show');
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        function agendar() {
+            window.location.href = 'agendamentos.html';
+        }
+
+        function enviarContato(event) {
+            event.preventDefault();
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const telefone = document.getElementById('telefone').value;
+            const assunto = document.getElementById('assunto').value;
+            const mensagem = document.getElementById('mensagem').value;
+
+            const whatsappNumero = '5519996393999';
+            const whatsappMensagem = `Olá! Novo contato do site:\n\nNome: ${nome}\nEmail: ${email}\nTelefone: ${telefone}\nAssunto: ${assunto}\nMensagem: ${mensagem}`;
+            const whatsappLink = `https://wa.me/${whatsappNumero}?text=${encodeURIComponent(whatsappMensagem)}`;
+
+            window.open(whatsappLink, '_blank');
+            document.querySelector('form').reset();
+        }\n    </script>\n</body>\n</html>
 
